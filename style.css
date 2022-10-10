@@ -1,6 +1,12 @@
 body{
   display: flex;
-
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.main-container{
+  display: flex;
+  gap:50px;
 }
 div.container{
   display: grid;
@@ -9,7 +15,7 @@ div.container{
   width: 550px;
 }
 .small-box{
-  /* border: 0.1px solid black; */
+  border: 1px solid black;
   box-sizing: border-box;
 }
 .option-btn{
@@ -27,4 +33,16 @@ div.container{
 }
 #colorwell{
   align-self: center;
+}
+#gridsize{
+  font-size: 25px;
+  align-self: center;
+}
+header{
+  font-size: 25px;
+  font-weight: bold;
+}
+footer{
+  font-size: medium;
+  margin: 20px;
 }

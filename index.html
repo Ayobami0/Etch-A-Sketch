@@ -4,18 +4,29 @@
       <title>Sketch A Etch</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href='style.css' rel='stylesheet'>  
+      <link href='style.css' rel='stylesheet'>
+      <script src="https://kit.fontawesome.com/ef2bf186f8.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="selections">
-      <input type="color" id="colorwell" value='#000000'/>
-      <button class="option-btn" onclick=changeSize()>PICK A GRID SIZE</button>
-      <button class="option-btn" onclick=rainbow()>RAINBOW MODE</button>
-      <button class="option-btn" onclick=reset()>RESET GRID</button>
-      <p id='cur-size'></p>
+    <header>
+      ETCH-A-SKETCH
+    </header>
+    <div class="main-container">
+      <div class="selections">
+        <label for="colorwell">Pick a color</label>
+        <input type="color" id="colorwell" value='#000000'/>
+        <button class="option-btn" onclick=changeSize()>PICK A GRID SIZE</button>
+        <button class="option-btn" onclick=toggleNormalMode()>NORMAL MODE</button>
+        <button class="option-btn" onclick=toggleRainbowMode()>RAINBOW MODE</button>
+        <button class="option-btn" onclick=reset()>RESET GRID</button>
+        <p id='gridsize'></p>
+      </div>
+      <div class="container" id='main-box'>
+      </div>
     </div>
-    <div class="container" id='main-box'>
-    </div>
+    <footer>
+      <i class="fa-light fa-copyright"></i> Ayobami 2022 <a href="https://github.com/Ayobami0/Etch-A-Sketch"><i class="fa-brands fa-github"></i></a>
+    </footer>
   </body>
   <script src="scripts.js"></script>
 </html>

@@ -1,8 +1,11 @@
 let mainBox = document.getElementById('main-box');
 let colorWell = document.getElementById('colorwell');
-let curSize = document.getElementById('cur-size');
+let curSize = document.getElementById('gridsize');
 
 let drawing;
+
+let normalMode = true;
+let rainbowMode = false;
 
 defaultSize = 16;
 color = '#000000'
@@ -41,17 +44,22 @@ function drawGrid(size) {
     });
     box.addEventListener('mousemove', function () {
       if (drawing){
-        box.style.backgroundColor=color;
+        if (rainbowMode){
+          box.style.backgroundColor = rainbow();
+        }
+        else if (normalMode){
+          box.style.backgroundColor=color;
+        }
       }
     });
   }
 }
 
 function changeSize() {
-  newSize = parseInt(prompt('Pick a new size', '16'));
+  let newSize = parseInt(prompt('Pick a new size', '16'));
   if (newSize != null && !isNaN(newSize)){
-    if (newSize > 100){
-      alert('Maximum size is 100');
+    if (newSize > 64){
+      alert('Maximum grid size is 64 by 64');
     }
     else{
       while (mainBox.hasChildNodes()) {
@@ -64,4 +72,31 @@ function changeSize() {
   else {
     alert('A number is required');
   }
+}
+function toggleRainbowMode() {
+  if (normalMode){
+    normalMode = false;
+  }
+  rainbowMode = true;
+}
+
+function toggleNormalMode() {
+  if (rainbowMode){
+    rainbowMode = false;
+  }
+  normalMode = true;
+}
+
+function rainbow() {
+  const colors = [
+    //ROYGBIV
+    'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'
+  ]
+  return colors[Math.floor(Math.random()*colors.length)]
+}
+
+function reset() {
+  for (const item of document.getElementsByClassName('small-box')){
+    item.style.backgroundColor = '#fff'
+  };
 }
