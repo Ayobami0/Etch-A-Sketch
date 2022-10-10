@@ -1,0 +1,30 @@
+body{
+  display: flex;
+
+}
+div.container{
+  display: grid;
+  border: 1px solid #000;
+  height: 550px;
+  width: 550px;
+}
+.small-box{
+  /* border: 0.1px solid black; */
+  box-sizing: border-box;
+}
+.option-btn{
+  border: 0 solid;
+  height: 30px;
+
+}
+.selections{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin: 15px;
+  gap: 20px;
+}
+#colorwell{
+  align-self: center;
+}
